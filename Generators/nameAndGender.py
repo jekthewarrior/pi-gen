@@ -2,7 +2,7 @@
 import xlrd as xl
 import random as rand
 
-def nameAndGender():
+def nameAndGender(numFirst, numLast):
 	"""
 	Generates names by accessing dataset of first and last names (Found in Name Database folder) along with their associated genders
 	
@@ -10,20 +10,19 @@ def nameAndGender():
 	"""
 	
 	# Declare list
-	data = []
+	data = {"first name":0, "last name":0, "gender":0}
 	
 	# Open file
-	wb = xl.open_workbook("Name Database/PI Name Dataset.xlsx")
+	wb = xl.open_workbook("Database/PI Name Dataset.xlsx")
 	sheet = wb.sheet_by_index(0)
 	
 	# Randomly select first name, then gender to assign to list
-	# TODO Replace hardcoded value with dynamic function to detect number of rows in column
-	randVal = rand.randint(1, 5000)
-	data.append(sheet.cell_value(randVal, 0))
-	data.append(sheet.cell_value(randVal, 1))
+	randVal = rand.randint(1, numFirst)
+	data["first name"] = (sheet.cell_value(randVal, 0))
+	data["gender"] = (sheet.cell_value(randVal, 1))
 	
 	# Randomly select last name and assign to list
-	data.append(sheet.cell_value(rand.randint(1, 5000), 2))
+	data["last name"] = (sheet.cell_value(rand.randint(1, numLast), 2))
 	
 	# Return list
 	return data
