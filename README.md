@@ -1,2 +1,2 @@
-# pi-generator
-A PI generator that does its best to generate random PI
+# PI Generator
+A PI generator that does its best.
