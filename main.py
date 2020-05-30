@@ -1,11 +1,13 @@
 # Imports go here
 import json
 
-import Generators.nameAndGender as ng
+import generators as gen
 import Database.datasetmanager as dsm
 
 # Here lies the Private Information Generator
-while(not ans.lower().startswith('y')):
+print(gen.telephone())
+
+"""while(not ans.lower().startswith('y')):
 	# Set-up templates and field selection
 
 	# Ask for number of people to generate info for
@@ -23,11 +25,11 @@ while(not ans.lower().startswith('y')):
 		for i in range(0, num):
 
 			#
-			outfile.write(json.dumps(ng.nameAndGender(numFirst, numLast), indent=4))
+			outfile.write(json.dumps(gen.nameAndGender(numFirst, numLast), indent=4))
 			if(i != num - 1):
 				outfile.write(",\n")
 
 		outfile.write("]")
 
 	# Prompt user to quit after each file generation
-	ans = input("Do you want to quit?")
+	ans = input("Do you want to quit?")"""
