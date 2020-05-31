@@ -7,7 +7,6 @@ import Database.datasetmanager as dsm
 # Here lies the Private Information Generator
 print(gen.telephone())
 
-"""
 ans = ""
 
 while(not ans.lower().startswith('y')):
@@ -28,7 +27,7 @@ while(not ans.lower().startswith('y')):
 		for i in range(0, num):
 
 			#
-			outfile.write(json.dumps(ng.nameAndGender(numFirst, numLast), indent=4))
+			outfile.write(json.dumps(gen.nameAndGender(numFirst, numLast), indent=4))
 			if(i != num - 1):
 				outfile.write(",\n")
 
@@ -36,5 +35,3 @@ while(not ans.lower().startswith('y')):
 
 	# Prompt user to quit after each file generation
 	ans = input("Do you want to quit?")
-"""
-	
