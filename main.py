@@ -25,7 +25,7 @@ while(not ans.lower().startswith('y')):
 		for i in range(0, num):
 
 			# Using dictionary unpacking method to combine all the generators
-			outfile.write(json.dumps({**gen.nameAndGender(numFirst, numLast), **gen.telephone(), **gen.creditCard()}, indent=4))
+			outfile.write(json.dumps({**gen.nameAndGender(numFirst, numLast), **gen.telephone(), **gen.creditCard(), **gen.ipAddress()}, indent=4))
 			if(i != num - 1):
 				outfile.write(",\n")
 

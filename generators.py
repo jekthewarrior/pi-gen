@@ -54,3 +54,17 @@ def creditCard():
 			num += "-"
 
 	return {"credit card":num}
+
+def ipAddress():
+	"""Generates ip address that is randomly IPv4 or IPv6"""
+
+	choice = rand.randint(0,1)
+
+	if(choice):
+		# The formula to generate random IPv4 addresses
+		return {"ip address":'.'.join('%s'%rand.randint(0, 255) for i in range(4))}
+	else:
+		# The formula to generate random IPv6 addresses
+		return {"ip address":':'.join('{:x}'.format(rand.randint(0, 2**16 - 1)) for i in range(8))}
+
+	
