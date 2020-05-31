@@ -32,12 +32,25 @@ def nameAndGender(numFirst, numLast, wantGender=True):
 	return data
 
 def telephone():
-	"""Generates random 10 digit numbers and returns them as a dictionary entry"""
+	"""Generates random 10 digit phone numbers and returns them as a dictionary entry"""
 	num = ""
 
+	# 
 	for i in range(1, 11):
 		num += str(rand.randint(0, 9))
-		if(i > 1 and i < 7 and i % 3 == 0):
+		if(i < 7 and i % 3 == 0):
 			num += "-"
 
 	return {"telephone":num}
+
+def creditCard():
+	"""Generates random 16 digit credit card numbers and returns them as a dictionary entry"""
+	num = ""
+
+	# Generate the numbers and add a dash for every four digits except at the end
+	for i in range(1, 17):
+		num += str(rand.randint(0,9))
+		if(i < 16 and i % 4 == 0):
+			num += "-"
+
+	return {"credit card":num}

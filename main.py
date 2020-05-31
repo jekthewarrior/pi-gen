@@ -5,15 +5,13 @@ import generators as gen
 import Database.datasetmanager as dsm
 
 # Here lies the Private Information Generator
-print(gen.telephone())
-
 ans = ""
 
 while(not ans.lower().startswith('y')):
 	# Set-up templates and field selection
 
 	# Ask for number of people to generate info for
-	num = input("Please enter how many people to generate information for: ")
+	num = int(input("Please enter how many people to generate information for: "))
 
 	# Run database check before calling other functions
 	numFirst = dsm.numFirsts()
@@ -26,8 +24,8 @@ while(not ans.lower().startswith('y')):
 
 		for i in range(0, num):
 
-			#
-			outfile.write(json.dumps(gen.nameAndGender(numFirst, numLast), indent=4))
+			# Using dictionary unpacking method to combine all the generators
+			outfile.write(json.dumps({**gen.nameAndGender(numFirst, numLast), **gen.telephone(), **gen.creditCard()}, indent=4))
 			if(i != num - 1):
 				outfile.write(",\n")
 
