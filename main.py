@@ -1,10 +1,15 @@
 # Imports go here
 import json
 
-import Generators.nameAndGender as ng
+import generators as gen
 import Database.datasetmanager as dsm
 
 # Here lies the Private Information Generator
+print(gen.telephone())
+
+"""
+ans = ""
+
 while(not ans.lower().startswith('y')):
 	# Set-up templates and field selection
 
@@ -31,3 +36,5 @@ while(not ans.lower().startswith('y')):
 
 	# Prompt user to quit after each file generation
 	ans = input("Do you want to quit?")
+"""
+	
