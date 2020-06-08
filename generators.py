@@ -14,7 +14,7 @@ def nameAndGender(numFirst, numLast, wantGender=True):
 	# Declare list
 	data = {"first name":0, "last name":0, "gender":0}
 
-	# Open file
+	# Open file - From databases
 	wb = xl.open_workbook("Database/PI Name Dataset.xlsx")
 	sheet = wb.sheet_by_index(0)
 
