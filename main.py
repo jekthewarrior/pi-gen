@@ -11,7 +11,7 @@ while(not ans.lower().startswith('y')):
 	# Set-up templates and field selection
 
 	# Ask to run database check before calling other functions. Otherwise just use variables from the config file
-	bop = input("Do you want to run a database check?")
+	bop = input("Do you want to run a database check? ")
 
 	if(bop.lower().startswith('y')):
 		# Perform database check
@@ -44,6 +44,7 @@ while(not ans.lower().startswith('y')):
 	ans = input("Do you want to quit?")
 
 # Update values in config file, should the database checks have occurred
-with open("Database/config.txt", "w") as outfile:
-	outfile.write(str(numFirst) + "\n")
-	outfile.write(str(numLast) + "")
+if(bop.lower().startswith('y')):
+	with open("Database/config.txt", "w") as outfile:
+		outfile.write(str(numFirst) + "\n")
+		outfile.write(str(numLast) + "")
