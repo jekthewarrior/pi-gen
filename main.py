@@ -3,6 +3,7 @@ import json
 
 import generators as gen
 import Database.datasetmanager as dsm
+import connector as con
 
 # Here lies the Private Information Generator
 ans = ""
